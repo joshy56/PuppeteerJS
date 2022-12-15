@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH node:16-bullseye-slim
+FROM        node:16-bullseye-slim
 
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
@@ -17,5 +17,5 @@ USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
-COPY        /entrypoint.sh
+COPY        ./../entrypoint.sh /entrypoint.sh
 CMD         [ "/bin/bash", "/entrypoint.sh" ]
